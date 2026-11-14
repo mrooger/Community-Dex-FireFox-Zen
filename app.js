@@ -558,9 +558,9 @@
     if(info.status==='ok')details=newer?`<p>Versão <b>${E(info.version)}</b> disponível. Veja as novidades e baixe o pacote oficial.</p>`:ahead?`<p>Você está usando a v${E(INSTALLED_VERSION)}, mais nova que o último release público (${E(info.version)}).</p>`:`<p>Você está na versão mais recente publicada (${E(info.version)}).</p>`;
     return `<div class="sd-panelcard sd-update-card"><div class="sd-card-heading"><span class="sd-section-icon">↻</span><div class="sd-grow"><h4>Atualizações</h4><p>Versão instalada: <b>v${E(INSTALLED_VERSION)}</b></p></div>${pill}</div>
       ${details}
-      <div class="sd-update-actions"><button type="button" class="sd-btn" data-action="check-updates" ${info.status==='checking'?'disabled':''}>↻ Verificar agora</button>${newer&&info.downloadUrl?'<button type="button" class="sd-ghost" data-action="download-update">↓ Baixar ZIP</button>':''}<button type="button" class="sd-ghost" data-action="open-release">↗ GitHub</button></div>
+      <div class="sd-update-actions"><button type="button" class="sd-btn" data-action="check-updates" ${info.status==='checking'?'disabled':''}>↻ Verificar agora</button>${newer&&info.downloadUrl?'<button type="button" class="sd-ghost" data-action="download-update">↓ Baixar XPI</button>':''}<button type="button" class="sd-ghost" data-action="open-release">↗ GitHub</button></div>
       ${toggle('autoUpdateCheck','Verificar automaticamente','Consulta novas versões ao abrir o jogo e periodicamente.')}
-      <p class="sd-update-note">Instalação por pasta: para aplicar uma nova versão, substitua os arquivos e recarregue a extensão em chrome://extensions. O navegador não instala ZIPs do GitHub automaticamente.</p></div>`;
+      <p class="sd-update-note">Para atualizar: baixe o XPI assinado, abra about:addons, clique na engrenagem e escolha Instalar extensão de um arquivo. Selecione o XPI e confirme a atualização.</p></div>`;
   }
   function checkUpdates(force=false){
     if(updatePending)return;
@@ -584,8 +584,8 @@
     }
   }
   function openUpdatePage(download=false){
-    const target=download&&state.update.downloadUrl?state.update.downloadUrl:state.update.url||'https://github.com/mrooger/CommunityDEX-Firefox-Zen/releases';
-    if(!/^https:\/\/github\.com\/mrooger\/CommunityDEX-Firefox-Zen\/releases(?:\/|$)/.test(target))return;
+    const target=download&&state.update.downloadUrl?state.update.downloadUrl:state.update.url||'https://github.com/mrooger/Community-Dex-FireFox-Zen/releases';
+    if(!/^https:\/\/github\.com\/mrooger\/Community-Dex-FireFox-Zen\/releases(?:\/|$)/.test(target))return;
     window.open(target,'_blank','noopener,noreferrer');
   }
   function updateNavDensity(){

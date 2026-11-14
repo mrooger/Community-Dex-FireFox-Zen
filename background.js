@@ -13,9 +13,9 @@ function parseRelease(data){
   if(!/^https:\/\/github\.com\/mrooger\/Community-Dex-FireFox-Zen\/releases\/tag\/v?\d+\.\d+\.\d+$/.test(url))throw Error('Endereço de release inválido');
   const packages=(Array.isArray(data.assets)?data.assets:[]).filter(item=>{
     const link=String(item.browser_download_url||'');
-    return /^https:\/\/github\.com\/mrooger\/Community-Dex-FireFox-Zen\/releases\/download\/v?\d+\.\d+\.\d+\/[^\/?#]+\.zip$/i.test(link);
+    return /^https:\/\/github\.com\/mrooger\/Community-Dex-FireFox-Zen\/releases\/download\/v?\d+\.\d+\.\d+\/[^\/?#]+\.xpi$/i.test(link);
   });
-  const asset=packages.find(item=>/firefox[\s_-]*zen|zen[\s_-]*firefox/i.test((String(item.name||'')||String(item.browser_download_url||'').split('/').pop())));
+  const asset=packages.find(item=>/community[\s_-]*dex/i.test((String(item.name||'')||String(item.browser_download_url||'').split('/').pop())))||packages[0];
   return {version:'v'+version,url,downloadUrl:asset?.browser_download_url||''};
 }
 async function getRelease(force){
