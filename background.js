@@ -10,10 +10,10 @@ function parseRelease(data){
   const version=String(data?.tag_name||'').replace(/^v/i,'');
   if(!/^\d+\.\d+\.\d+$/.test(version))throw Error('Versão não reconhecida');
   const url=String(data?.html_url||'');
-  if(!/^https:\/\/github\.com\/mrooger\/CommunityDEX-Firefox-Zen\/releases\/tag\/v?\d+\.\d+\.\d+$/.test(url))throw Error('Endereço de release inválido');
+  if(!/^https:\/\/github\.com\/mrooger\/Community-Dex-FireFox-Zen\/releases\/tag\/v?\d+\.\d+\.\d+$/.test(url))throw Error('Endereço de release inválido');
   const packages=(Array.isArray(data.assets)?data.assets:[]).filter(item=>{
     const link=String(item.browser_download_url||'');
-    return /^https:\/\/github\.com\/mrooger\/CommunityDEX-Firefox-Zen\/releases\/download\/v?\d+\.\d+\.\d+\/[^\/?#]+\.zip$/i.test(link);
+    return /^https:\/\/github\.com\/mrooger\/Community-Dex-FireFox-Zen\/releases\/download\/v?\d+\.\d+\.\d+\/[^\/?#]+\.zip$/i.test(link);
   });
   const asset=packages.find(item=>/firefox[\s_-]*zen|zen[\s_-]*firefox/i.test((String(item.name||'')||String(item.browser_download_url||'').split('/').pop())));
   return {version:'v'+version,url,downloadUrl:asset?.browser_download_url||''};
