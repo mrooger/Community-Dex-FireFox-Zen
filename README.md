@@ -27,8 +27,6 @@ Inclui suporte visual às variantes de Pokémon de **Outland**, usando o sprite 
 3. Selecione o ZIP baixado.
 4. Abra **[Poké Idle World](https://poke.idleworld.online/play)** e pressione **Alt + P** ou clique no ícone flutuante.
 
-> A instalação pelo modo de desenvolvedor precisa ser refeita após reiniciar o navegador. Uma instalação permanente requer um pacote assinado pela Mozilla.
-
 ## 🔄 Atualizações
 
 As novas versões ficam disponíveis em **[Releases](https://github.com/mrooger/Community-Dex-FireFox-Zen/releases)**. A Community Dex também permite verificar atualizações pelo painel de Ajustes.
