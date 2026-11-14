@@ -1,8 +1,8 @@
 'use strict';
 const DexAPI=typeof browser!=='undefined'?browser:chrome;
 const CACHE_TIME=14*86400000;
-const RELEASES_URL='https://api.github.com/repos/mrooger/CommunityDEX-Firefox-Zen/releases/latest';
-const RELEASES_PAGE='https://github.com/mrooger/CommunityDEX-Firefox-Zen/releases';
+const RELEASES_URL='https://api.github.com/repos/mrooger/Community-Dex-FireFox-Zen/releases/latest';
+const RELEASES_PAGE='https://github.com/mrooger/Community-Dex-FireFox-Zen/releases';
 const UPDATE_CACHE_MS=30*60*1000;
 let releaseCache=null;
 let releasePending=null;

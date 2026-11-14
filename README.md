@@ -1,67 +1,46 @@
-# Community Dex — Firefox & Zen
+# ⚡ Community Dex — Firefox & Zen
 
 **Sua ferramenta Pokémon para Poké Idle World.**
 
-Extensão gratuita e independente para **Mozilla Firefox** e **Zen Browser**, com Pokédex, análise de IVs, Hunt Tracker, capturas, Shinies e relatórios em uma interface personalizável.
+A **Community Dex** é uma extensão gratuita para **Firefox** e **Zen Browser** que reúne análise de Pokémon, acompanhamento de Hunts, capturas e encontros Shiny em um painel moderno e personalizável.
 
-[**Releases**](https://github.com/mrooger/CommunityDEX-Firefox-Zen/releases) · [**Community Hub**](https://stigalzera.com/) · [**Poké Idle World**](https://poke.idleworld.online/play)
+**[📥 Download](https://github.com/mrooger/Community-Dex-FireFox-Zen/releases)** · **[🎮 Poké Idle World](https://poke.idleworld.online/play)** · **[🌐 Community Hub](https://stigalzera.com/)**
 
-## Instalação
+## ✨ Recursos
 
-### Teste temporário no Firefox / Zen
-
-1. Baixe o ZIP da extensão na página de **Releases**.
-2. Abra `about:debugging` e acesse **Este Firefox / This Firefox**.
-3. Escolha **Carregar extensão temporária / Load Temporary Add-on** e selecione o ZIP (ou o `manifest.json` após extrair).
-4. Conceda as permissões necessárias para `poke.idleworld.online`, quando solicitado.
-5. Abra o jogo e utilize o botão flutuante ou **Alt + P**.
-
-**A instalação temporária é removida ao reiniciar o navegador.** Para disponibilizar instalação permanente, é necessário assinar o pacote pela Mozilla e distribuir o XPI assinado. O ZIP do GitHub, mesmo renomeado para XPI, não substitui a assinatura. [Portal de desenvolvedores Mozilla](https://addons.mozilla.org/developers/).
-
-### Atualização
-
-Para uma instalação temporária, carregue o novo ZIP em `about:debugging`. Se estiver utilizando uma versão assinada, instale a atualização assinada com o mesmo ID de extensão. Os dados da versão Firefox/Zen ficam no perfil desse navegador, separados do Chrome/Edge.
-
-## Recursos
-
-| Ferramenta | Funcionalidades |
+| Ferramenta | O que oferece |
 | --- | --- |
-| **Pokédex** | Leitura da mochila e do Mercado Global, atributos, IVs, tipos, fraquezas, resistências, comparação e fichas manuais ou por formulário |
-| **Hunt Tracker** | XP total, XP/h, abates totais e por hora, loot e bônus atuais de VIP/Stream |
-| **Capturas** | Raridade, multiplicador, IV, filtros, ordenação, melhor captura e sprites de Pokémon, incluindo variantes de Outland |
-| **Shinies** | Detecção de encontros, alertas opcionais e histórico sem duplicidades indevidas |
-| **Community LOG** | Sessões de 24 horas, até 5 LOGs diários e 5 manuais, visualização e exportação JSON |
-| **Stream Geral** | Painel compacto e opcional para acompanhar estatísticas durante a transmissão |
-| **Personalização** | Abas configuráveis, seções recolhíveis, painel flutuante e atalho **Alt + P** |
+| 🧬 **Pokédex & IVs** | Atributos, potencial, tipos, fraquezas e comparação de Pokémon, incluindo leitura da mochila e do Mercado Global |
+| ⚔️ **Hunt Tracker** | XP/h, abates/h, loot, progresso da sessão e bônus de experiência |
+| 🎯 **Capturas** | Histórico, raridade, multiplicador, IV, filtros, ordenação e melhor captura |
+| ✨ **Radar Shiny** | Detecção automática de encontros, alertas e histórico |
+| 📊 **Community LOG** | Resumos de sessões de 24 horas, logs diários e manuais, com exportação JSON |
+| 🎥 **Stream Geral** | Painel compacto de estatísticas para acompanhar durante as lives |
+| 🎨 **Personalização** | Abas configuráveis, seções recolhíveis, painel flutuante e atalho **Alt + P** |
 
-## Compatibilidade e privacidade
+Inclui suporte visual às variantes de Pokémon de **Outland**, usando o sprite da espécie correspondente quando necessário.
 
-- Compatível com **Firefox 140+** e versões atuais do **Zen Browser**.
-- O jogo é acessado em https://poke.idleworld.online/play.
-- Estatísticas, fichas, capturas e LOGs são mantidos localmente no perfil do navegador; você pode exportar relatórios em JSON.
-- A extensão consulta dados públicos de Pokémon na **PokéAPI** e a API do **GitHub** para verificar lançamentos. Alguns metadados de espécies são enviados a esses serviços para consulta.
-- A leitura de capturas usa as informações disponibilizadas pelo próprio jogo, inclusive seu endpoint de Log de Capturas, sem transmitir credenciais para a comunidade.
+## 📥 Como instalar
 
-## Estrutura do projeto
+1. Acesse **[Releases](https://github.com/mrooger/Community-Dex-FireFox-Zen/releases)** e baixe o ZIP para Firefox/Zen.
+2. No navegador, acesse `about:debugging` → **Este Firefox** → **Carregar extensão temporária**.
+3. Selecione o ZIP baixado.
+4. Abra **[Poké Idle World](https://poke.idleworld.online/play)** e pressione **Alt + P** ou clique no ícone flutuante.
 
-- `manifest.json`: manifesto da extensão para Firefox/Zen
-- `app.js`, `app.css`, `core.js`: interface e análise
-- `market.js`, `capture-log.js`: leitura do Mercado Global e capturas
-- `session.js`, `log.html`, `log.js`, `log.css`: sessões e relatórios
-- `main-bridge.js`, `background.js`: integração de eventos e serviços
-- `tests/`: testes automatizados
+> A instalação pelo modo de desenvolvedor precisa ser refeita após reiniciar o navegador. Uma instalação permanente requer um pacote assinado pela Mozilla.
 
-Execute os testes com Node.js:
+## 🔄 Atualizações
 
-```bash
-node --test tests/*.test.js
-```
+As novas versões ficam disponíveis em **[Releases](https://github.com/mrooger/Community-Dex-FireFox-Zen/releases)**. A Community Dex também permite verificar atualizações pelo painel de Ajustes.
 
-## Projeto
+## 🔒 Privacidade
 
-- [Community Dex — Firefox & Zen](https://github.com/mrooger/CommunityDEX-Firefox-Zen)
-- [Edição Chrome / Edge](https://github.com/mrooger/CommunityDEX)
-- [Community Hub](https://stigalzera.com/)
-- [Licença MIT](LICENSE)
+As estatísticas, capturas e relatórios são armazenados localmente no navegador. A extensão consulta o jogo para apresentar seus dados e utiliza serviços públicos de Pokémon e GitHub para informações de espécies e atualizações.
 
-Community Dex é um projeto comunitário independente, sem afiliação oficial com Poké Idle World ou Pokémon.
+---
+
+**Community Dex — Sua Ferramenta Pokémon!**
+
+[Community Hub](https://stigalzera.com/) · [Versão Chrome / Edge](https://github.com/mrooger/CommunityDEX) · [Licença MIT](LICENSE)
+
+*Projeto independente, sem afiliação oficial com Poké Idle World ou Pokémon.*
